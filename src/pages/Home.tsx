@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 
 const Home = () => {
   const navigate = useNavigate();
+
   return (
     <div className="flex items-center justify-center min-h-screen bg-[#83B698] font-dm-sans flex-col">
       <div className="p-8 shadow-lg text-center bg-white-30 rounded-30px">

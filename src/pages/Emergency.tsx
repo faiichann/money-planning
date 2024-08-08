@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import ReactGA from "react-ga";
 
 const Emergency = () => {
   const [monthlyExpenses, setMonthlyExpenses] = useState<number>(0);
@@ -12,6 +13,11 @@ const Emergency = () => {
   const [isChecked, setIsChecked] = useState(false);
 
   const handleToggle = () => {
+    ReactGA.event({
+      category: "Emergency",
+      action: "Toggle",
+      value: Math.round(monthlyExpenses * emergencyMonths),
+    });
     setIsChecked(!isChecked);
   };
 
@@ -52,7 +58,7 @@ const Emergency = () => {
     <div className="flex items-center justify-center flex-col min-h-screen bg-[#83B698] font-dm-sans">
       {isPlan ? null : (
         <button
-          className="text-3xl text-green-900 top-20 absolute"
+          className="text-3xl text-green-900 top-1 absolute"
           onClick={() => navigate(-1)}
         >
           ←
