@@ -73,7 +73,7 @@ const Retirement = () => {
     <div className="flex items-center justify-center flex-col min-h-screen bg-[#83B698] font-dm-sans">
       {isPlan ? null : (
         <button
-          className="text-3xl text-green-900 top-20 absolute"
+          className="text-3xl text-green-900 top-1 absolute"
           onClick={() => navigate(-1)}
         >
           ←
@@ -117,7 +117,7 @@ const Retirement = () => {
                 <input
                   type="number"
                   placeholder="0"
-                  className="border border-gray-300 rounded-lg p-2 w-80 placeholder:text-gray-400 bg-white"
+                  className="border border-gray-300 text-green-900 rounded-lg p-2 w-80 placeholder:text-gray-400 bg-white"
                   value={timePeriod === 0 ? "" : timePeriod}
                   onChange={(e) => setTimePeriod(Number(e.target.value))}
                 />
@@ -134,7 +134,7 @@ const Retirement = () => {
                 <input
                   type="number"
                   placeholder="0"
-                  className="border border-gray-300 rounded-lg p-2 w-80 placeholder:text-gray-400  bg-white"
+                  className="border border-gray-300 text-green-900 rounded-lg p-2 w-80 placeholder:text-gray-400  bg-white"
                   value={presentValue === 0 ? "" : presentValue}
                   onChange={(e) => setPresentValue(Number(e.target.value))}
                 />
@@ -151,7 +151,7 @@ const Retirement = () => {
                 <input
                   type="number"
                   placeholder="0"
-                  className="border border-gray-300 rounded-lg p-2 w-70 placeholder:text-gray-400  bg-white"
+                  className="border border-gray-300 text-green-900 rounded-lg p-2 w-70 placeholder:text-gray-400  bg-white"
                   value={interestRate === 0 ? "" : interestRate}
                   onChange={(e) => setInterestRate(Number(e.target.value))}
                 />
@@ -180,7 +180,7 @@ const Retirement = () => {
                 <input
                   type="number"
                   placeholder="0"
-                  className="border border-gray-300 rounded-lg p-2 w-80 placeholder:text-gray-400 bg-white"
+                  className="border border-gray-300 text-green-900 rounded-lg p-2 w-80 placeholder:text-gray-400 bg-white"
                   value={currentAge === 0 ? "" : currentAge}
                   onChange={(e) => setCurrentAge(Number(e.target.value))}
                 />
@@ -197,7 +197,7 @@ const Retirement = () => {
                 <input
                   type="number"
                   placeholder="0"
-                  className="border border-gray-300 rounded-lg p-2 w-80 placeholder:text-gray-400  bg-white"
+                  className="border border-gray-300 text-green-900 rounded-lg p-2 w-80 placeholder:text-gray-400  bg-white"
                   value={retirementAge === 0 ? "" : retirementAge}
                   onChange={(e) => setRetirementAge(Number(e.target.value))}
                 />
@@ -214,7 +214,7 @@ const Retirement = () => {
                 <input
                   type="number"
                   placeholder="0"
-                  className="border border-gray-300 rounded-lg p-2 w-80 placeholder:text-gray-400  bg-white"
+                  className="border border-gray-300 text-green-900 rounded-lg p-2 w-80 placeholder:text-gray-400  bg-white"
                   value={deathAge === 0 ? "" : deathAge}
                   onChange={(e) => setDeathAge(Number(e.target.value))}
                 />
@@ -231,7 +231,7 @@ const Retirement = () => {
                 <input
                   type="number"
                   placeholder="0.00"
-                  className="border border-gray-300 rounded-lg p-2 w-80 placeholder:text-gray-400 bg-white"
+                  className="border border-gray-300 text-green-900 rounded-lg p-2 w-80 placeholder:text-gray-400 bg-white"
                   value={retirementExpenses === 0 ? "" : retirementExpenses}
                   onChange={(e) =>
                     setRetirementExpenses(Number(e.target.value))
