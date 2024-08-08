@@ -5,7 +5,7 @@ import { BrowserRouter } from "react-router-dom";
 
 const AppWithRouter = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/money-planning/">
       <App />
     </BrowserRouter>
   );
