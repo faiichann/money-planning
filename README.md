@@ -1,5 +1,7 @@
 # Money Planning Web Application
 
+url: [demo](https://faiichann.github.io/money-planning/)
+
 This is a financial planning application built with Vite, React, TypeScript, and Tailwind CSS. The app helps users plan their emergency funds and retirement savings.
 
 ## Features
