@@ -4,6 +4,7 @@ import Emergency from "./Emergency";
 import Retirement from "./Retirement";
 import { useEffect } from "react";
 import ReactGA from "react-ga";
+import Search from "./Search";
 
 const App = () => {
   useEffect(() => {
@@ -16,6 +17,7 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/emergency" element={<Emergency />} />
         <Route path="/retirement" element={<Retirement />} />
+        <Route path="/search" element={<Search />} />
       </Routes>
     </div>
   );
