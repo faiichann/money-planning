@@ -15,7 +15,7 @@ const Home = () => {
             className="w-full h-[60px] py-2 bg-white text-green-900 rounded-lg shadow hover:bg-green-900 hover:text-white"
             onClick={() => navigate("/emergency")}
           >
-            วางแผนเงินสำรองฉุกเฉิน
+            วางแผนเงินฉุกเฉิน
           </button>
 
           <button
