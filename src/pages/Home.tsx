@@ -20,6 +20,12 @@ const Home = () => {
 
           <button
             className="w-full h-[60px] py-2 bg-white text-green-900 rounded-lg shadow hover:bg-green-900 hover:text-white"
+          >
+            วางแผนอนาคต
+          </button>
+
+          <button
+            className="w-full h-[60px] py-2 bg-white text-green-900 rounded-lg shadow hover:bg-green-900 hover:text-white"
             onClick={() => navigate("/retirement")}
           >
             วางแผนเงินเกษียณ
