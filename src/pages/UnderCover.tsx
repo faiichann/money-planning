@@ -21,18 +21,38 @@ interface HistoryEntry {
 type Screen = "setup" | "reveal" | "game" | "gameover";
 
 const WORD_PAIRS: [string, string][] = [
-  ["\u0e1f\u0e38\u0e15\u0e1a\u0e2d\u0e25", "\u0e23\u0e31\u0e01\u0e1a\u0e35\u0e49"],
-  ["\u0e41\u0e21\u0e27", "\u0e40\u0e2a\u0e37\u0e2d"],
-  ["\u0e1e\u0e34\u0e0b\u0e0b\u0e48\u0e32", "\u0e1e\u0e32\u0e22"],
-  ["\u0e17\u0e30\u0e40\u0e25", "\u0e17\u0e30\u0e40\u0e25\u0e2a\u0e32\u0e1a"],
-  ["\u0e23\u0e16\u0e22\u0e19\u0e15\u0e4c", "\u0e23\u0e16\u0e21\u0e2d\u0e40\u0e15\u0e2d\u0e23\u0e4c\u0e44\u0e0b\u0e04\u0e4c"],
-  ["\u0e14\u0e32\u0e1a", "\u0e21\u0e35\u0e14"],
-  ["\u0e01\u0e32\u0e41\u0e1f", "\u0e0a\u0e32"],
-  ["\u0e0a\u0e49\u0e32\u0e07", "\u0e41\u0e23\u0e14"],
-  ["\u0e41\u0e2d\u0e1b\u0e40\u0e1b\u0e34\u0e49\u0e25", "\u0e25\u0e39\u0e01\u0e41\u0e1e\u0e23\u0e4c"],
-  ["\u0e23\u0e32\u0e40\u0e21\u0e19", "\u0e1a\u0e30\u0e2b\u0e21\u0e35\u0e48"],
-  ["\u0e1d\u0e19", "\u0e2b\u0e34\u0e21\u0e30"],
-  ["\u0e2a\u0e34\u0e07\u0e42\u0e15", "\u0e40\u0e2a\u0e37\u0e2d\u0e42\u0e04\u0e23\u0e48\u0e07"],
+  ["ฟุตบอล", "รักบี้"],
+  ["แมว", "เสือ"],
+  ["พิซซ่า", "พาย"],
+  ["ทะเล", "ทะเลสาบ"],
+  ["รถยนต์", "รถมอเตอร์ไซค์"],
+  ["ดาบ", "มีด"],
+  ["กาแฟ", "ชา"],
+  ["ช้าง", "แรด"],
+  ["แอปเปิ้ล", "ลูกแพร์"],
+  ["ราเมน", "บะหมี่"],
+  ["ฝน", "หิมะ"],
+  ["สิงโต", "เสือโคร่ง"],
+  ["เตียง", "โซฟา"],
+  ["โรงหนัง", "โรงละคร"],
+  ["ตู้เย็น", "ช่องแช่แข็ง"],
+  ["ดินสอ", "ปากกา"],
+  ["โน้ตบุ๊ก", "แท็บเล็ต"],
+  ["รถไฟ", "รถเมล์"],
+  ["สนามบิน", "สถานีรถไฟ"],
+  ["หมอ", "พยาบาล"],
+  ["ครัว", "ห้องอาหาร"],
+  ["ระเบียง", "ดาดฟ้า"],
+  ["ภูเขา", "เนินเขา"],
+  ["แม่น้ำ", "คลอง"],
+  ["กระเป๋าเป้", "กระเป๋าถือ"],
+  ["เสื้อกันหนาว", "เสื้อกันฝน"],
+  ["สบู่", "แชมพู"],
+  ["ช้อน", "ส้อม"],
+  ["พัดลม", "แอร์"],
+  ["ไข่ดาว", "ไข่เจียว"],
+  ["นาฬิกาข้อมือ", "นาฬิกาปลุก"],
+  ["ป่า", "สวน"],
 ];
 
 function shuffle<T>(arr: T[]): T[] {
@@ -40,7 +60,7 @@ function shuffle<T>(arr: T[]): T[] {
 }
 
 const ROLE_LABEL: Record<Role, string> = {
-  Citizen: "\u{1F464} \u0e1e\u0e25\u0e40\u0e21\u0e37\u0e2d\u0e07",
+  Citizen: "👤 พลเมือง",
   Undercover: "\u{1F575}\uFE0F Undercover",
   "Mr. White": "\u2B1C Mr. White",
 };
@@ -90,7 +110,7 @@ const FlipCard = ({
         >
           <span className="text-2xl">&#x1F0CF;</span>
           <p className="text-white font-semibold text-sm">{player.name}</p>
-          <p className="text-white/35 text-xs">&#x0E41;&#x0E15;&#x0E30;&#x0E40;&#x0E1E;&#x0E37;&#x0E48;&#x0E2D;&#x0E14;&#x0E39;</p>
+          <p className="text-white/35 text-xs">แตะเพื่อดู</p>
         </div>
         <div
           className="absolute inset-0 rounded-2xl border border-blue-500/40 bg-blue-950/70 backdrop-blur-md flex flex-col items-center justify-center gap-1.5 px-3"
@@ -100,9 +120,9 @@ const FlipCard = ({
           {player.role !== "Mr. White" ? (
             <p className="text-white text-lg font-bold">{player.word}</p>
           ) : (
-            <p className="text-white/50 text-xs text-center">&#x0E40;&#x0E14;&#x0E32;&#x0E04;&#x0E33;&#x0E08;&#x0E32;&#x0E01;&#x0E1A;&#x0E23;&#x0E34;&#x0E1A;&#x0E17;</p>
+            <p className="text-white/50 text-xs text-center">เดาคำจากบริบท</p>
           )}
-          <p className="text-white/30 text-xs">&#x0E41;&#x0E15;&#x0E30;&#x0E40;&#x0E1E;&#x0E37;&#x0E48;&#x0E2D;&#x0E1B;&#x0E34;&#x0E14;</p>
+          <p className="text-white/30 text-xs">แตะเพื่อปิด</p>
         </div>
       </motion.div>
     </div>
