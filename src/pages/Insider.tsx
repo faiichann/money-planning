@@ -111,7 +111,6 @@ const Insider = () => {
   const [roles, setRoles] = useState<Record<number, Role>>({});
   const [timeLeft, setTimeLeft] = useState(300);
   const [revealed, setRevealed] = useState<Set<number>>(new Set());
-  const [votes, setVotes] = useState<Record<number, number>>({});
   const [votingStarted, setVotingStarted] = useState(false);
   const [winner, setWinner] = useState<"insider" | "others" | null>(null);
   const [hint, setHint] = useState("");
@@ -200,7 +199,6 @@ const Insider = () => {
     setGameState("role-reveal");
     setRevealed(new Set());
     setHintUsed(false);
-    setVotes({});
   };
 
   const handleFlip = (id: number) => {
@@ -216,8 +214,6 @@ const Insider = () => {
 
   // Handle vote
   const handleVote = (votedId: number) => {
-    setVotes({ 0: votedId });
-    
     const insiderId = players.find((p) => p.role === "insider")?.id;
 
     if (votedId === insiderId) {
@@ -234,7 +230,6 @@ const Insider = () => {
     setGameState("setup");
     setPlayerNames(["A", "B", "C", ""]);
     setRoles({});
-    setVotes({});
     setVotingStarted(false);
     setRevealed(new Set());
     setWinner(null);
