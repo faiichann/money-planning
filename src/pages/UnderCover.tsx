@@ -78,6 +78,7 @@ const WINNER_LABEL: Record<Role, string> = {
 };
 
 const BOARD_GROUP_NAMES = ["ฝ้าย", "ฟร้อง", "เอฟ", "เฟิร์น", "มาร์ค", "ตูน", "โอเปค", "เอิร์ท", "ซุง", "พีท", "จอย"];
+const BOARD_GROUP_GIRLS_NAMES = ["ฝ้าย", "มาย", "มุก", "ออย", "แพร"];
 const DEFAULT_PLAYER_NAMES = new Set(["A", "B", "C", ""]);
 
 const FlipCard = ({
@@ -116,7 +117,9 @@ const FlipCard = ({
           className="absolute inset-0 rounded-2xl border border-blue-500/40 bg-blue-950/70 backdrop-blur-md flex flex-col items-center justify-center gap-1.5 px-3"
           style={{ backfaceVisibility: "hidden", transform: "rotateY(180deg)" }}
         >
-          <p className={`font-bold text-sm ${ROLE_COLOR[player.role]}`}>{ROLE_LABEL[player.role]}</p>
+          {player.role === "Mr. White" && (
+            <p className={`font-bold text-sm ${ROLE_COLOR[player.role]}`}>{ROLE_LABEL[player.role]}</p>
+          )}
           {player.role !== "Mr. White" ? (
             <p className="text-white text-lg font-bold">{player.word}</p>
           ) : (
@@ -158,6 +161,17 @@ const UnderCover = () => {
           .filter((name) => name && !DEFAULT_PLAYER_NAMES.has(name)),
       );
       const toAdd = BOARD_GROUP_NAMES.filter((name) => !existing.has(name));
+      return [...existing, ...toAdd];
+    });
+  };
+  const addBoardGroupGirlsPlayers = () => {
+    setPlayerNames((prev) => {
+      const existing = new Set(
+        prev
+          .map((name) => name.trim())
+          .filter((name) => name && !DEFAULT_PLAYER_NAMES.has(name)),
+      );
+      const toAdd = BOARD_GROUP_GIRLS_NAMES.filter((name) => !existing.has(name));
       return [...existing, ...toAdd];
     });
   };
@@ -289,6 +303,12 @@ const UnderCover = () => {
                     className="px-2.5 py-1 rounded-lg border border-blue-400/40 text-blue-300 text-xs font-medium hover:bg-blue-500/10 transition-colors"
                   >
                     เด็กนัดบอร์ด
+                  </button>
+                  <button
+                    onClick={addBoardGroupGirlsPlayers}
+                    className="px-2.5 py-1 rounded-lg border border-pink-400/40 text-pink-300 text-xs font-medium hover:bg-pink-500/10 transition-colors"
+                  >
+                    กูสวย
                   </button>
                 </div>
                 <button onClick={addPlayer} className="text-blue-400 text-sm hover:text-blue-300 transition-colors">+ </button>

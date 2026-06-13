@@ -15,7 +15,11 @@ const categories = [
     id: "board",
     icon: "📋",
     title: "เด็กนัดบอร์ด",
-    items: [{ label: "🕵️ Undercover", path: "/undercover" }],
+    items: [
+      { label: "🕵️ Undercover", path: "/undercover" },
+      { label: "🩷 Answer Me!", path: "/answer-me" },
+      { label: "🕵️ Insider", path: "/insider" },
+    ],
   },
   {
     id: "dev",

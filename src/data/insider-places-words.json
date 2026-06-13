@@ -1,0 +1,22 @@
+[
+  { "word": "เซเว่นอีเลฟเว่น", "difficulty": "Easy" },
+  { "word": "โรงเรียน", "difficulty": "Easy" },
+  { "word": "สนามบิน", "difficulty": "Easy" },
+  { "word": "โรงภาพยนตร์", "difficulty": "Easy" },
+  { "word": "สวนจตุจักร", "difficulty": "Easy" },
+  { "word": "วัดพระแก้ว", "difficulty": "Medium" },
+  { "word": "ร้านหมอนวด", "difficulty": "Medium" },
+  { "word": "คาเฟ่แมว", "difficulty": "Medium" },
+  { "word": "สวนสนุก", "difficulty": "Medium" },
+  { "word": "ฟิตเนส", "difficulty": "Medium" },
+  { "word": "หอไอเฟล", "difficulty": "Medium" },
+  { "word": "ตู้ ATM", "difficulty": "Medium" },
+  { "word": "ปั๊มน้ำมัน", "difficulty": "Medium" },
+  { "word": "ภูเขาไฟฟูจิ", "difficulty": "Hard" },
+  { "word": "ตลาดโต้รุ่ง", "difficulty": "Hard" },
+  { "word": "รถไฟใต้ดิน", "difficulty": "Hard" },
+  { "word": "ออนเซ็น", "difficulty": "Hard" },
+  { "word": "ห้องแล็บ / ห้องทดลอง", "difficulty": "Hard" },
+  { "word": "ทางม้าลาย", "difficulty": "Hard" },
+  { "word": "เกาะสมุย", "difficulty": "Hard" }
+]

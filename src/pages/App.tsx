@@ -6,6 +6,8 @@ import { useEffect } from "react";
 import ReactGA from "react-ga";
 import Search from "./Search";
 import UnderCover from "./UnderCover";
+import AnswerMe from "./AnswerMe";
+import Insider from "./Insider";
 
 const App = () => {
   useEffect(() => {
@@ -20,6 +22,8 @@ const App = () => {
         <Route path="/retirement" element={<Retirement />} />
         <Route path="/search" element={<Search />} />
         <Route path="/undercover" element={<UnderCover />} />
+        <Route path="/answer-me" element={<AnswerMe />} />
+        <Route path="/insider" element={<Insider />} />
       </Routes>
     </div>
   );
